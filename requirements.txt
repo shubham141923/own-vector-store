@@ -1,1 +1,29 @@
-numpy
+# Importing the necessary library
+import numpy as np
+
+# Define a function to calculate the factorial of a number
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Define a function to calculate the combination of two numbers
+def combination(n, k):
+    return int(factorial(n) / (factorial(k) * factorial(n-k)))
+
+# Define a function to calculate the mean of an array of numbers
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+# Define a function to calculate the standard deviation of an array of numbers
+def standard_deviation(numbers):
+    m = mean(numbers)
+    variance = sum((x - m)**2 for x in numbers) / len(numbers)
+    return variance**0.5
+
+# Example usage of the functions
+numbers = np.array([1, 2, 3, 4, 5])
+print("Mean:", mean(numbers))
+print("Standard Deviation:", standard_deviation(numbers))
+print("Combination of 10 and 2:", combination(10, 2))
