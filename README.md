@@ -1,0 +1,2 @@
+# own-vector-store
+vectordb
